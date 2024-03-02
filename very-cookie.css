@@ -12,7 +12,7 @@
   height: -moz-min-content;
   height: -o-min-content;
   max-height: 95%;
-  padding: 2.2rem;
+  padding: 2rem;
   color: rgb(0, 0, 0);
   z-index: 12001;
   border-radius: 3rem;
@@ -58,8 +58,8 @@
   height: 40px;
   margin: 0.8rem;
   border-radius: 16px;
-  padding: 0;
   border: none;
+  padding: 0;
 }
 .cookie-banner__button-1 {
   background: #ec7a5c;
@@ -69,7 +69,7 @@
 .cookie-banner__button-1:hover {
   transform: scale(1.03, 1.03);
   color: rgb(249, 249, 249);
-  background: #e1441a;
+  background: #e96745;
 }
 .cookie-banner__button-2 {
   border: 1.5px solid #ec7a5c;
@@ -78,9 +78,9 @@
   color: #ec7a5c;
 }
 .cookie-banner__button-2:hover {
-  color: rgb(249, 249, 249);
+  color: #ec7a5c;
   transform: scale(1.03, 1.03);
-  background: #e1441a;
+  background: #ececec;
 }
 .cookie-banner__option {
   display: flex;
@@ -194,4 +194,4 @@ input:checked + .slider.small:before {
     max-width: 100%;
     padding: 1.2rem;
   }
-}/*# sourceMappingURL=cookiesStyling.css.map */
+}

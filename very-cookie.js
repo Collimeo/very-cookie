@@ -1,5 +1,3 @@
-let scriptPath = document.currentScript.src;
-
 function setCookie(name,value,days) {
     var expires = "";
     if (days) {
@@ -23,6 +21,8 @@ function eraseCookie(name) {
     document.cookie = name +'=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;';
 }
 
+let vcScriptPath = document.currentScript.src;
+
 function cookieAlert(body, mainContent, selectContent) {
 
     //check if cookies are already applied to show or hide banner
@@ -42,7 +42,7 @@ function cookieAlert(body, mainContent, selectContent) {
     let link = document.createElement('link');
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = `${scriptPath.replace('very-cookie.js','')}very-cookie.css`;
+    link.href = `${vcScriptPath.replace('very-cookie.js','')}very-cookie.css`;
     head.appendChild(link);
 
 
@@ -68,7 +68,7 @@ function cookieAlert(body, mainContent, selectContent) {
         //switch button
         document.getElementById('cookie-banner__options').remove();
         document.querySelector(".cookie-banner__buttons").insertAdjacentHTML("beforeend", 
-            `<button id="cookie-banner__select" class="cookie-banner__button cookie-banner__button-1">Akceptuję wybór</button>`
+            `<button id="cookie-banner__select" class="cookie-banner__button cookie-banner__button-1">Potwierdzam wybór</button>`
         )
         cookieAccept.classList.replace("cookie-banner__button-1", "cookie-banner__button-2");
 
@@ -184,7 +184,7 @@ function cookieAlert(body, mainContent, selectContent) {
 
 window.addEventListener("load", function() {
 
-    const privacyPoliticsPath = `${window.location.host}/ciasteczka/`;
+    const privacyPoliticsPath = `/ciasteczka/`;
 
     const mainContent = `
     <div class="cookie-banner">
@@ -192,11 +192,11 @@ window.addEventListener("load", function() {
         <h3 class="cookie-banner__title">Informacje o wykorzystaniu cookies</h3>
         <p class="cookie-banner__text">Ta witryna wykorzystuje pliki cookies do optymalizacji działania witryny oraz analizy ruchu.</p> 
         <p class="cookie-banner__text">Twoje dane mogą być udostępniane naszym partnerom reklamowym i analitycznym, którzy mogą łączyć je z innymi informacjami, które im dostarczył_ś lub które zebrali podczas korzystania z ich usług.</p>
-        <p class="cookie-banner__text">Możesz zarządzać plikami cookie, klikając na 'Wybór zgód'.  Po dostosowaniu ustawień, zatwierdź swoje wybory klikając 'Akceptuję wybór'. Aby zaakceptować wszystkie pliki cookies, kliknij 'Akceptuję'. Aby odrzucić wszystkie pliki cookies, wybierz 'Odrzucam cookies'.</p> 
-        <p class="cookie-banner__text">Szczegóły wykorzystania przez nas plików cookies znajdziesz na stronie <a href='${privacyPoliticsPath}'>polityki prywatności</a>.</p>
+        <p class="cookie-banner__text">Możesz zarządzać plikami cookie, klikając na 'Wybór zgód'.  Po dostosowaniu ustawień, zatwierdź swoje wybory klikając 'Potwierdzam wybór'. Aby zaakceptować wszystkie pliki cookies, kliknij 'Akceptuję wszystkie'. Aby odrzucić wszystkie opcjonalne pliki cookies, wybierz 'Tylko niezbędne'.</p> 
+        <p class="cookie-banner__text">Szczegóły wykorzystania przez nas plików cookies znajdziesz na stronie <a href='${privacyPoliticsPath}'>Ciasteczka</a>.</p>
     </div>
         <div class="cookie-banner__buttons">
-            <button id="cookie-banner__deny" class="cookie-banner__button cookie-banner__button-2">Odrzucam cookies</button>
+            <button id="cookie-banner__deny" class="cookie-banner__button cookie-banner__button-2">Tylko niezbędne</button>
             <button id="cookie-banner__options" class="cookie-banner__button cookie-banner__button-2">Wybór zgód</button>
             <button id="cookie-banner__accept" class="cookie-banner__button cookie-banner__button-1">Akceptuję wszystkie</button>
         </div>
